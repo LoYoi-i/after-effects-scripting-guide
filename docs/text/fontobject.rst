@@ -122,7 +122,7 @@ FontObject.fontID
 ``app.fonts.allFonts[0][0].fontID``
 
 .. note::
-   This functionality was added in After Effects (Beta) 24.0 and subject to change while it remains in Beta.
+   This functionality was added in After Effects 24.2.
 
 **Description**
 
@@ -235,7 +235,7 @@ FontObject.nativeFamilyName
 
 **Description**
 
-The native family name of the font in full 16 bit Unicode. Often different than what is returned from ``familyName`` for non-Latin fonts.
+The native family name of the font in full 16 bit Unicode. Often different than what is returned by :ref:`FontObject.familyName` for non-Latin fonts.
 
 **Type**
 
@@ -252,7 +252,7 @@ FontObject.nativeFullName
 
 **Description**
 
-The native full name of the font in full 16 bit Unicode. Often different than what is returned from ``fullName`` for non-Latin fonts.
+The native full name of the font in full 16 bit Unicode. Often different than what is returned by :ref:`FontObject.fullName` for non-Latin fonts.
 
 **Type**
 
@@ -269,7 +269,7 @@ FontObject.nativeStyleName
 
 **Description**
 
-The native style name of the font in full 16 bit Unicode. Often different than what is returned from ``styleName`` for non-Latin fonts.
+The native style name of the font in full 16 bit Unicode. Often different than what is returned by :ref:`FontObject.styleName` for non-Latin fonts.
 
 **Type**
 

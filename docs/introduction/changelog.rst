@@ -8,16 +8,62 @@ What's new and changed for scripting?
 
 ----
 
-.. _Changelog.24.2:
+.. _Changelog.24.4:
 
-`After Effects 24.2 Beta build 29 <https://community.adobe.com/t5/after-effects-beta-discussions/new-vertical-text-scripting-hooks-in-scripting/m-p/14271823>`_ (December 2023)
+`After Effects 24.4 Beta build 25 <https://community.adobe.com/t5/after-effects-beta-discussions/scripting-new-api-for-3d-model-layers/td-p/14580044>`_ (March 2024)
+********************************************************************************************************************************************************************************************
+
+	- Added: :ref:`ThreeDModelLayer`
+
+`After Effects 24.4 Beta build 24 <https://community.adobe.com/t5/after-effects-beta-discussions/scripting-new-and-updated-apis-for-font-management/td-p/14508673>`_ (March 2024)
+********************************************************************************************************************************************************************************************
+
+	- Added: :ref:`FontsObject.favoriteFontFamilyList`
+	- Added: :ref:`FontsObject.fontsDuplicateByPostScriptName`
+	- Added: :ref:`FontsObject.freezeSyncSubstitutedFonts`
+	- Added: :ref:`FontsObject.mruFontFamilyList`
+	- Added: :ref:`FontsObject.substitutedFontReplacementMatchPolicy`
+	- Added: :ref:`FontsObject.pollForAndPushNonSystemFontFoldersChanges`
+
+`After Effects 24.4 Beta build 6 <https://community.adobe.com/t5/after-effects-beta-discussions/heads-up-revisions-fix-to-missing-font-replacement-behavior/td-p/14466683>`_ (March 2024)
+********************************************************************************************************************************************************************************************
+
+- Scripting methods and attributes added or changed
+	- Changed: :ref:`Project.replaceFont`
+	- Changed: :ref:`Project.usedFonts`
+
+`After Effects 24.3 Beta build 25 <https://community.adobe.com/t5/after-effects-beta-discussions/per-character-scripting-public-beta-announcement/m-p/14414997#M3325>`_ (February 2024)
+********************************************************************************************************************************************************************************************
+
+- Scripting methods and attributes added or changed
+	- Changed: :ref:`ParagraphRange object<ParagraphRange>` (all text attributes removed)
+	- Added: :ref:`ComposedLineRange object<ComposedLineRange>`
+	- Added: :ref:`ParagraphRange.characterRange`
+	- Added: :ref:`TextDocument.composedLineCharacterIndexesAt`
+	- Added: :ref:`TextDocument.composedLineCount`
+	- Added: :ref:`TextDocument.composedLineRange`
+
+`After Effects 24.3 Beta build 20 <https://community.adobe.com/t5/after-effects-beta-discussions/new-text-box-options-available-in-scripting/m-p/14409110>`_ (February 2024)
+********************************************************************************************************************************************************************************************
+
+- Scripting methods and attributes added or changed
+	- Added: :ref:`TextDocument.boxAutoFitPolicy`
+	- Added: :ref:`TextDocument.boxFirstBaselineAlignment`
+	- Added: :ref:`TextDocument.boxFirstBaselineAlignmentMinimum`
+	- Added: :ref:`TextDocument.boxInsetSpacing`
+	- Added: :ref:`TextDocument.boxOverflow`
+	- Added: :ref:`TextDocument.boxVerticalAlignment`
+
+`After Effects 24.2 <https://helpx.adobe.com/after-effects/using/whats-new/2024-2.html>`_ (February 2024)
 ********************************************************************************************************************************************************************************************
 
 - Scripting methods and attributes added or changed
 	- Added: :ref:`LayerCollection.addVerticalText`
 	- Added: :ref:`LayerCollection.addVerticalBoxText`
 	- Added: :ref:`TextDocument.lineOrientation`
-	- Changed: :ref:`TextDocument.composerEngine`
+	- Added: :ref:`FontsObject.fontServerRevision`
+	- Added: :ref:`FontsObject.getFontByID`
+	- Added: :ref:`FontObject.fontID`
 
 `After Effects 24.2 Beta build 17 <https://community.adobe.com/t5/after-effects-beta-discussions/per-character-scripting-public-beta-announcement/m-p/14247138>`_ (November 2023)
 ********************************************************************************************************************************************************************************************
@@ -30,15 +76,7 @@ What's new and changed for scripting?
 	- Added: :ref:`TextDocument.paragraphCount`
 	- Added: :ref:`TextDocument.paragraphCharacterIndexesAt`
 
-.. _Changelog.24.1:
-
-`After Effects 24.1 Beta build 10 <https://community.adobe.com/t5/after-effects-beta-discussions/more-scripting-hooks/m-p/14083457>`_ (September 2023)
-********************************************************************************************************************************************************************************************
-
-- Scripting methods and attributes added
-	- Added: :ref:`FontsObject.fontServerRevision`
-	- Added: :ref:`FontsObject.getFontByID`
-	- Added: :ref:`FontObject.fontID`
+.. _Changelog.24.0:
 
 `After Effects 24.0 Beta build 37 <https://community.adobe.com/t5/after-effects-beta-discussions/new-text-scripting-hooks-for-font-replacement/m-p/14025889>`_ (August 2023)
 ********************************************************************************************************************************************************************************************
@@ -46,8 +84,6 @@ What's new and changed for scripting?
 - Scripting methods and attributes added
 	- Added: :ref:`Project.usedFonts`
 	- Added: :ref:`Project.replaceFont`
-
-.. _Changelog.24.0:
 
 `After Effects 24.0 <https://helpx.adobe.com/after-effects/using/whats-new/2024.html>`_ (October 2023)
 ********************************************************************************************************************************************************************************************

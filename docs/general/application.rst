@@ -849,24 +849,25 @@ app.purge()
 
 ``app.purge(target)``
 
+.. note::
+   | This functionality was updated in After Effects 24.3 to allow the ``ALL_CACHES`` enumerated value to clear both the RAM and disk cache, with the ALL_MEMORY_CACHES enumerated value added to purge only the RAM.
+   |
+   | In versions prior to 24.3, ``ALL_CACHES`` will only clear the RAM cache.
+
 **Description**
 
-Purges unused data of the specified types from memory. Replicates the Purge options in the Edit menu.
+Purges unused data of the specified types. Replicates the Purge options in the Edit menu.
 
 **Parameters**
 
-+------------+---------------------------------------------------------------+
-| ``target`` | The type of elements to purge from memory; a PurgeTarget      |
-|            | enumerated value, one of:                                     |
-|            |                                                               |
-|            | - ``PurgeTarget.ALL_CACHES``: Purges all data that After      |
-|            |   Effects has cached to physical memory.                      |
-|            | - ``PurgeTarget.UNDO_CACHES``: Purges all data saved in the   |
-|            |   undo cache.                                                 |
-|            | - ``PurgeTarget.SNAPSHOT_CACHES``: Purges all data cached as  |
-|            |   composition/layer snapshots.                                |
-|            | - ``PurgeTarget.IMAGE_CACHES`` : Purges all saved image data. |
-+------------+---------------------------------------------------------------+
+============ ===============================================
+ ``target``   | The type of elements to purge from memory; a PurgeTarget enumerated value, one of:
+              | ∙ ``PurgeTarget.ALL_CACHES``: Purges all data that After Effects has cached to both RAM and disk cache.
+              | ∙ ``PurgeTarget.ALL_MEMORY_CACHES``: Purges all data that After Effects has cached to RAM. *(new in 24.3)*
+              | ∙ ``PurgeTarget.UNDO_CACHES``: Purges all data saved in the undo cache.
+              | ∙ ``PurgeTarget.SNAPSHOT_CACHES``: Purges all data cached as composition/layer snapshots.
+              | ∙ ``PurgeTarget.IMAGE_CACHES``: Purges all saved image data.
+============ ===============================================
 
 **Returns**
 

@@ -70,7 +70,7 @@ TextDocument.allCaps
 
 **Description**
 
-True if a Text layer has All Caps enabled; otherwise false. To set this value, use ``fontCapsOption`` added in After Effects 24.0.
+True if a Text layer has All Caps enabled; otherwise false. To set this value, use :ref:`fontCapsOption<TextDocument.fontCapsOption>` added in After Effects 24.0.
 
 
 .. warning::
@@ -91,7 +91,7 @@ TextDocument.applyFill
 
 **Description**
 
-When true, the Text layer shows a fill. Access the ``fillColor`` attribute for the actual color. When false, only a stroke is shown.
+When true, the Text layer shows a fill. Access the :ref:`fillColor<TextDocument.fillColor>` attribute for the actual color. When false, only a stroke is shown.
 
 **Type**
 
@@ -108,7 +108,7 @@ TextDocument.applyStroke
 
 **Description**
 
-When true, the Text layer shows a stroke. Access the ``strokeColor`` attribute for the actual color and ``strokeWidth`` for its thickness. When false, only a fill is shown.
+When true, the Text layer shows a stroke. Access the :ref:`strokeColor<TextDocument.strokeColor>` attribute for the actual color and :ref:`strokeWidth<TextDocument.strokeWidth>` for its thickness. When false, only a fill is shown.
 
 **Type**
 
@@ -286,6 +286,136 @@ Floating-point value; read-write.
 
 ----
 
+.. _TextDocument.boxAutoFitPolicy:
+
+TextDocument.boxAutoFitPolicy
+*********************************************
+
+``textDocument.boxAutoFitPolicy``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Enables the automated change of the box height to fit the text content in the box.
+The box only grows down.
+
+Defaults to ``BoxAutoFitPolicy.NONE``.
+
+Will be disabled if :ref:`TextDocument.boxVerticalAlignment` is anything other than ``boxVerticalAlignment.TOP``.
+
+**Type**
+
+A ``BoxAutoFitPolicy`` enumerated value; read-write. One of:
+
+-  ``BoxAutoFitPolicy.NONE``
+-  ``BoxAutoFitPolicy.HEIGHT_CURSOR``
+-  ``BoxAutoFitPolicy.HEIGHT_PRECISE_BOUNDS``
+-  ``BoxAutoFitPolicy.HEIGHT_BASELINE``
+
+----
+
+.. _TextDocument.boxFirstBaselineAlignment:
+
+TextDocument.boxFirstBaselineAlignment
+*********************************************
+
+``textDocument.boxFirstBaselineAlignment``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Controls the position of the first line of composed text relative to the top of the box.
+
+Disabled if :ref:`TextDocument.boxFirstBaselineAlignmentMinimum` is anything other than zero.
+
+Defaults to ``BoxFirstBaselineAlignment.ASCENT``.
+
+**Type**
+
+A ``BoxFirstBaselineAlignment`` enumerated value; read-write. One of:
+
+-  ``BoxFirstBaselineAlignment.ASCENT``
+-  ``BoxFirstBaselineAlignment.CAP_HEIGHT``
+-  ``BoxFirstBaselineAlignment.EM_BOX``
+-  ``BoxFirstBaselineAlignment.LEADING``
+-  ``BoxFirstBaselineAlignment.LEGACY_METRIC``
+-  ``BoxFirstBaselineAlignment.MINIMUM_VALUE_ASIAN``
+-  ``BoxFirstBaselineAlignment.MINIMUM_VALUE_ROMAN``
+-  ``BoxFirstBaselineAlignment.TYPO_ASCENT``
+-  ``BoxFirstBaselineAlignment.X_HEIGHT``
+
+----
+
+.. _TextDocument.boxFirstBaselineAlignmentMinimum:
+
+TextDocument.boxFirstBaselineAlignmentMinimum
+*********************************************
+
+``textDocument.boxFirstBaselineAlignmentMinimum``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Manually controls the position of the first line of composed text relative to the top of the box.
+
+A value set here other than zero will override the effect of the :ref:`textDocument.boxFirstBaselineAlignment` value.
+
+Defaults to zero.
+
+**Type**
+
+Floating-point value; read/write.
+
+----
+
+.. _TextDocument.boxInsetSpacing:
+
+TextDocument.boxInsetSpacing
+*********************************************
+
+``textDocument.boxInsetSpacing``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Controls the inner space between the box bounds and where the composable text box begins. The same value is applied to all four sides of the box.
+
+Defaults to zero.
+
+**Type**
+
+Floating-point value; read/write.
+
+----
+
+.. _TextDocument.boxOverflow:
+
+TextDocument.boxOverflow
+*********************************************
+
+``textDocument.boxOverflow``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Returns true if some part of the text did not compose into the box.
+
+**Type**
+
+Boolean; read-only.
+
+----
+
 .. _TextDocument.boxText:
 
 TextDocument.boxText
@@ -319,7 +449,7 @@ TextDocument.boxTextPos
 The layer coordinates from a paragraph (box) Text layer's anchor point as a [width, height] array of pixel dimensions.
 
 .. warning::
-   Throws an exception if ``boxText`` does not return true for the Text layer.
+   Throws an exception if :ref:`boxText<TextDocument.boxText>` does not return true for the Text layer.
 
 **Type**
 
@@ -347,11 +477,61 @@ TextDocument.boxTextSize
 The size of a paragraph (box) Text layer as a [width, height] array of pixel dimensions.
 
 .. warning::
-   Throws an exception if ``boxText`` does not return true for the Text layer.
+   Throws an exception if :ref:`boxText<TextDocument.boxText>` does not return true for the Text layer.
    
 **Type**
 
 Array of two integers (minimum value of 1); read/write.
+
+----
+
+.. _TextDocument.boxVerticalAlignment:
+
+TextDocument.boxVerticalAlignment
+*********************************************
+
+``textDocument.boxVerticalAlignment``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and subject to change while it remains in Beta.
+
+**Description**
+
+Enables the automated vertical alignment of the composed text in the box.
+
+Defaults to ``BoxVerticalAlignment.TOP``
+
+**Type**
+
+A ``BoxVerticalAlignment`` enumerated value; read-write. One of:
+
+-  ``BoxVerticalAlignment.TOP``
+-  ``BoxVerticalAlignment.CENTER``
+-  ``BoxVerticalAlignment.BOTTOM``
+-  ``BoxVerticalAlignment.JUSTIFY``
+
+----
+
+.. _TextDocument.composedLineCount:
+
+TextDocument.composedLineCount
+*********************************************
+
+``textDocument.composedLineCount``
+
+**Description**
+
+Returns the number of composed lines in the Text layer, may be zero if all text is overset.
+
+
+The :ref:`TextDocument` instance is initialized from the composed state and subsequent changes to the :ref:`TextDocument` instance does not cause recomposition.
+
+Even if you remove all the text from the :ref:`TextDocument` instance, the value returned here remains unchanged.
+
+
+**Type**
+
+Number; read-only.
 
 ----
 
@@ -371,7 +551,7 @@ The Text layer's paragraph composer engine option. By default new Text layers wi
 
 If this attribute has a mixed value, it will be read as ``undefined``.
 
-This property is read-write, but an exception will be thrown if any enum value other than ``ComposerEngine.UNIVERSAL_TYPE_ENGINE`` is written.
+This attrribute is read-write, but an exception will be thrown if any enum value other than ``ComposerEngine.UNIVERSAL_TYPE_ENGINE`` is written.
 
 In effect, you can change an older document from ``ComposerEngine.LATIN_CJK_ENGINE`` to ``ComposerEngine.UNIVERSAL_TYPE_ENGINE``, but not the reverse.
 
@@ -566,9 +746,9 @@ TextDocument.fillColor
 
 The Text layer's fill color, as an array of ``[r, g, b]`` floating-point values. For example, in an 8-bpc project, a red value of 255 would be 1.0, and in a 32-bpc project, an overbright blue value can be something like 3.2.
 
-Throws an exception on read if ``applyFill`` is not true.
+Throws an exception on read if :ref:`applyFill<TextDocument.applyFill>` is not true.
 
-Setting this value will also set ``applyFill`` to true across the affected characters.
+Setting this value will also set :ref:`applyFill<TextDocument.applyFill>` to true across the affected characters.
 
 .. warning::
    This value only reflects the first character in the Text layer.
@@ -620,7 +800,7 @@ The Text layer's font specified by its PostScript name.
 On write, there are very few resrictions on what can be supplied - if the underlying font management system does not have a matching :ref:`fontObject` instance matching the supplied PostScript name a substitute instance will be created.
 The Font instance returned in the case of duplicate PostScript names will be the 0th element of the array returned from :ref:`FontsObject.getFontsByPostScriptName`.
 
-You should use the :ref:`fontObject` property for precise control.
+You should use the :ref:`fontObject` attribute for precise control.
 
 .. warning::
    This value only reflects the first character in the Text layer.
@@ -1055,7 +1235,7 @@ TextDocument.lineOrientation
 ``textDocument.lineOrientation``
 
 .. note::
-   This functionality was added in After Effects (Beta) 24.2 and is subject to change while it remains in Beta.
+   This functionality was added in After Effects 24.2.
 
 **Description**
 
@@ -1242,9 +1422,9 @@ TextDocument.strokeColor
 
 The Text layer's stroke color, as an array of [r, g, b] floating-point values. For example, in an 8-bpc project, a red value of 255 would be 1.0, and in a 32-bpc project, an overbright blue value can be something like 3.2.
 
-Throws an exception on read if ``applyStroke`` is not true.
+Throws an exception on read if :ref:`applyStroke<TextDocument.applyStroke>` is not true.
 
-Setting this value will also set ``applyStroke`` to true across the affected characters.
+Setting this value will also set :ref:`applyStroke<TextDocument.applyStroke>` to true across the affected characters.
 
 .. warning::
    This value only reflects the first character in the Text layer.
@@ -1405,7 +1585,7 @@ This Text layer's tsume value as a normalized percentage, from 0.0 -> 1.0.
    This value only reflects the first character in the Text layer.
    If you change this value, it will set all characters in the Text layer to the specified setting.
 
-   This property accepts values from 0.0 -> 100.0, however the value IS expecting a normalized value from 0.0 -> 1.0. Using a value higher than 1.0 will produce unexpected results; AE's Character Panel will clamp the value at 100%, despite the higher value set by scripting (ie ``TextDocument.tsume = 100`` _really_ sets a value of 10,000%)
+   This attribute accepts values from 0.0 -> 100.0, however the value IS expecting a normalized value from 0.0 -> 1.0. Using a value higher than 1.0 will produce unexpected results; AE's Character Panel will clamp the value at 100%, despite the higher value set by scripting (ie ``TextDocument.tsume = 100`` _really_ sets a value of 10,000%)
 
 **Type**
 
@@ -1455,7 +1635,7 @@ TextDocument.characterRange()
 
 Returns an instance of the Text layer range accessor CharacterRange.
 
-The instance will remember the parameters passed in the constructor - they remain constant and changes to the `TextDocument` length may cause the instance to throw exceptions on access until the `TextDocument` length is changed to a length which makes the range valid again. 
+The instance will remember the parameters passed in the constructor - they remain constant and changes to the :ref:`TextDocument<TextDocument>` length may cause the instance to throw exceptions on access until the :ref:`TextDocument<TextDocument>` length is changed to a length which makes the range valid again. 
 
 Use toString() to find out what the constructed parameters were.
 
@@ -1476,6 +1656,74 @@ It is not possible to create a :ref:`CharacterRange` which spans the final carri
 **Returns**
 
 An instance of :ref:`CharacterRange`
+
+----
+
+.. _TextDocument.composedLineCharacterIndexesAt:
+
+TextDocument.composedLineCharacterIndexesAt()
+*********************************************
+
+``textDocument.composedLineCharacterIndexesAt(characterIndex)``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and is subject to change while it remains in Beta.
+
+**Description**
+
+Returns the character index bounds of a :ref:`ComposedLineRange` in the Text layer.
+
+**Parameters**
+
+==================== ======================================================================================================== 
+ ``characterIndex``   Unsigned integer. A text index in the Text layer, which will be mapped to the composed line it intersects.  
+==================== ======================================================================================================== 
+
+**Returns**
+
+Generic object;
+Key ``start`` will be set to text index of the start of the composed line (greater than or equal to zero).
+Key ``end`` will be set to text index of the end of the composed line (greater than start, or equal to start if it is the last composed line).
+
+Will throw an exception if the computed start and end are outside of the current :ref:`TextDocument` 
+Remember that the composed lines are static and subsequent changes to the :ref:`TextDocument` instance which changes its length may render the composed line data invalid.
+
+----
+
+.. _TextDocument.composedLineRange:
+
+TextDocument.composedLineRange()
+*********************************************
+
+``textDocument.composedLineRange(composedLineIndexStart, [signedComposedLineIndexEnd])``
+
+.. note::
+   This functionality was added in After Effects (Beta) 24.3 and is subject to change while it remains in Beta.
+
+**Description**
+
+Returns an instance of the Text layer range accessor :ref:`ComposedLineRange`.
+
+The instance will remember the parameters passed in the constructor - they remain constant and changes to the :ref:`TextDocument<TextDocument>` contents may cause the instance to throw exceptions on access until the :ref:`TextDocument<TextDocument>` contents are changed which makes the range valid again. 
+
+Use :ref:`ComposedLineRange.toString` to find out what the constructed parameters were.
+
+**Parameters**
+
+=============================== ===============================================
+ ``composedLineIndexStart``     Unsigned integer. Starts at zero, must be the less than the number of composed lines in the :ref:`TextDocument`.
+ ``signedComposedLineIndexEnd`` | Optional signed integer. If not specified, will be computed at (composedLineIndexStart + 1).
+                                | If set to -1, then the :ref:`ComposedLineRange` will dynamically calculate this on access to the last composed line of the :ref:`TextDocument`.
+                                | signedComposedLineIndexEnd must be greater than composedLineIndexStart, and less than or equal to the number of composed lines in the :ref:`TextDocument`.
+=============================== ===============================================
+
+Throws an exception if the parameters would result in an invalid range.
+
+Remember that the composed lines are static and subsequent changes to the :ref:`TextDocument` instance which changes its length may render the composed line data invalid.
+
+**Returns**
+
+An instance of :ref:`ComposedLineRange`
 
 ----
 
@@ -1519,11 +1767,11 @@ TextDocument.paragraphRange()
 
 **Description**
 
-Returns an instance of the Text layer range accessor ParagraphRange.
+Returns an instance of the Text layer range accessor :ref:`ParagraphRange`.
 
-The instance will remember the parameters passed in the constructor - they remain constant and changes to the `TextDocument` contents may cause the instance to throw exceptions on access until the `TextDocument` contents are changed which makes the range valid again. 
+The instance will remember the parameters passed in the constructor - they remain constant and changes to the :ref:`TextDocument<TextDocument>` contents may cause the instance to throw exceptions on access until the :ref:`TextDocument<TextDocument>` contents are changed which makes the range valid again. 
 
-Use toString() to find out what the constructed parameters were.
+Use :ref:`ParagraphRange.toString` to find out what the constructed parameters were.
 
 **Parameters**
 
